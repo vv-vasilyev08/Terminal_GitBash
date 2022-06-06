@@ -1,0 +1,90 @@
+Linux terminal (GitBash) commands
+1) Посмотреть где я:
+pwd
+
+2) Создать папку:
+mkdir qa_30_group_free
+
+3) Зайти в папку:
+cd qa_30_group_free
+
+4) Создать 3 папки:
+mkdir qa_{1..3}
+
+5) Зайти в любую папку: cd qa_1
+6) Создать 5 файлов: (3 txt, 2 json): 
+touch text{1..3}.txt
+touch js{4..5}.json
+
+7) Создать 3 папки:
+mkdir qa_{11..13}
+
+8) Вывести список содержимого папки:
+ls 
+или ls -la
+
+9) Открыть любой txt файл:
+cat text1.txt 
+или vim text1.txt
+
+10)Написать туда что-нибудь, любой текст:
+cat >>text1.txt 
+default text
+default text2
+default text3
+default text4
+default text5
+
+или i
+
+11)Сохранить и выйти: 
+CTRL+C
+или :wq
+
+12)Выйти из папки на уровень выше: cd ..
+—
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку: 
+mv qa_1/text1.txt qa_1/qa_11/text1.txt ; mv qa_1/js4.json qa_1/qa_12/js4.json
+
+14) Скопировать любые 2 файла, которые вы создали, в любую другую папку: 
+cp qa_1/*.txt qa_1/qa_13/
+
+15) Найти файл по имени:
+find qa_1/qa_13 -name "text3.txt"
+
+16) Просмотреть содержимое в реальном времени (команда grep) изучите как она работает: 
+tail -f eng.txt | grep -rin many
+
+17) Вывести несколько первых строк из текстового файла:
+head -n5 text1.txt
+
+18) Вывести несколько последних строк из текстового файла:
+tail -n5 text1.txt
+
+19) Просмотреть содержимое длинного файла (команда less) изучите как она работает: 
+less text1.txt
+
+20) Вывести дату и время: date
+
+Задание *
+1) Отправить http запрос на сервер:
+http://162.55.220.72:5005/terminal-hw-request 
+
+curl 'http://162.55.220.72:5005/terminal-hw-request'
+curl'http://162.55.220.72:5005/object_info_3?name=Vyacheslav&age=33'
+
+2) Написать скрипт который выполнит автоматически пункты 2, 3, 4, 5, 6, 7, 8, 13:
+
+cat >> myscript.sh
+
+#!/bin/bash
+mkdir qa_script
+cd qa_script
+mkdir qa_1 qa_2 qa_3
+cd qa_1
+touch 1.txt 2.txt 3.txt 4.json 5.json
+mkdir 111 222 333
+ls
+mv 1.txt 111/1.txt ; mv 2.txt 222/2.txt
+CTRL+D
+Bash ./myscript.sh
