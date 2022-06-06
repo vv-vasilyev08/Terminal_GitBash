@@ -64,14 +64,15 @@ tail -n5 text1.txt
 19) Просмотреть содержимое длинного файла (команда less) изучите как она работает: 
 less text1.txt
 
-20) Вывести дату и время: date
+20) Вывести дату и время:
+date
 
 Задание *
 1) Отправить http запрос на сервер:
 http://162.55.220.72:5005/terminal-hw-request 
 
 curl 'http://162.55.220.72:5005/terminal-hw-request'
-curl'http://162.55.220.72:5005/object_info_3?name=Vyacheslav&age=33'
+curl 'http://162.55.220.72:5005/object_info_3?name=Vyacheslav&age=33'
 
 2) Написать скрипт который выполнит автоматически пункты 2, 3, 4, 5, 6, 7, 8, 13:
 
@@ -85,6 +86,6 @@ cd qa_1
 touch 1.txt 2.txt 3.txt 4.json 5.json
 mkdir 111 222 333
 ls
-mv 1.txt 111/1.txt ; mv 2.txt 222/2.txt
-CTRL+D
+mv 1.txt 111/1.txt && mv 2.txt 222/2.txt
+CTRL+C
 Bash ./myscript.sh
